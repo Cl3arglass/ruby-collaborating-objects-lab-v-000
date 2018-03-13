@@ -15,7 +15,6 @@ class Song
     # I think the problem with the import method is that this method doesn't save to @@all
     if (self.artist.nil?)
       self.artist = Artist.new(name)
-      @@all << self.artist
     else
       self.artist.name = name
     end

@@ -29,7 +29,7 @@ class Artist
   def self.find_or_create_by_name(name)
     name_arr = @@all.select{|artist| artist.name == name }
       if name_arr.size == 0
-        Artist.new(name)
+        Artist.new(name).save
       else
         name_arr[0]
     end

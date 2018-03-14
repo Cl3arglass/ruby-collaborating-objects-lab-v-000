@@ -13,11 +13,12 @@ class Song
 
   def artist_name=(name)
     # I think the problem with the import method is that this method doesn't save to @@all
-    if (self.artist.nil?)
-      self.artist = Artist.new(name)
-    else
-      self.artist.name = name
-    end
+    # if (self.artist.nil?)
+    #   self.artist = Artist.new(name)
+    # else
+    #   self.artist.name = name
+    # end
+    p Artist.find_or_create_by_name(name)
   end
 
   def self.new_by_filename(file_name)
